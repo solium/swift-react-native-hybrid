@@ -1,0 +1,64 @@
+PODS:
+  - React/ART (0.45.1):
+    - React/Core
+  - React/BatchedBridge (0.45.1):
+    - React/Core
+    - React/cxxreact_legacy
+  - React/Core (0.45.1):
+    - Yoga (= 0.45.1.React)
+  - React/cxxreact_legacy (0.45.1):
+    - React/jschelpers_legacy
+  - React/DevSupport (0.45.1):
+    - React/Core
+    - React/RCTWebSocket
+  - React/jschelpers_legacy (0.45.1)
+  - React/RCTActionSheet (0.45.1):
+    - React/Core
+  - React/RCTAnimation (0.45.1):
+    - React/Core
+  - React/RCTImage (0.45.1):
+    - React/Core
+    - React/RCTNetwork
+  - React/RCTLinkingIOS (0.45.1):
+    - React/Core
+  - React/RCTNetwork (0.45.1):
+    - React/Core
+  - React/RCTSettings (0.45.1):
+    - React/Core
+  - React/RCTText (0.45.1):
+    - React/Core
+  - React/RCTVibration (0.45.1):
+    - React/Core
+  - React/RCTWebSocket (0.45.1):
+    - React/Core
+  - Yoga (0.45.1.React)
+
+DEPENDENCIES:
+  - React/ART (from `../node_modules/react-native`)
+  - React/BatchedBridge (from `../node_modules/react-native`)
+  - React/Core (from `../node_modules/react-native`)
+  - React/DevSupport (from `../node_modules/react-native`)
+  - React/RCTActionSheet (from `../node_modules/react-native`)
+  - React/RCTAnimation (from `../node_modules/react-native`)
+  - React/RCTImage (from `../node_modules/react-native`)
+  - React/RCTLinkingIOS (from `../node_modules/react-native`)
+  - React/RCTNetwork (from `../node_modules/react-native`)
+  - React/RCTSettings (from `../node_modules/react-native`)
+  - React/RCTText (from `../node_modules/react-native`)
+  - React/RCTVibration (from `../node_modules/react-native`)
+  - React/RCTWebSocket (from `../node_modules/react-native`)
+  - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
+
+EXTERNAL SOURCES:
+  React:
+    :path: "../node_modules/react-native"
+  Yoga:
+    :path: "../node_modules/react-native/ReactCommon/yoga"
+
+SPEC CHECKSUMS:
+  React: 0c9191a8b0c843d7004f950ac6b5f6cba9d125c7
+  Yoga: 89c8738d42a0b46a113acb4e574336d61cba2985
+
+PODFILE CHECKSUM: 9ff4af2d03b7631a817ad9da92036decc9935457
+
+COCOAPODS: 1.2.0

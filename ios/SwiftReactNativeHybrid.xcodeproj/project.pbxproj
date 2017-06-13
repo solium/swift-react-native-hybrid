@@ -15,6 +15,9 @@
 		0C4968541EF012AB00986618 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4968521EF012AB00986618 /* LaunchScreen.storyboard */; };
 		0C49685F1EF012AB00986618 /* SwiftReactNativeHybridTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C49685E1EF012AB00986618 /* SwiftReactNativeHybridTests.swift */; };
 		0C49686A1EF012AB00986618 /* SwiftReactNativeHybridUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4968691EF012AB00986618 /* SwiftReactNativeHybridUITests.swift */; };
+		1937C1C0D1ADE12FA5590552 /* Pods_SwiftReactNativeHybridUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3501558751A4EC5F8F8F35 /* Pods_SwiftReactNativeHybridUITests.framework */; };
+		51245CAAA5D00DF4C3D918EA /* Pods_SwiftReactNativeHybrid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 940C527B1200A8F7B16FDE0A /* Pods_SwiftReactNativeHybrid.framework */; };
+		CB789553A1AD7220DAD243D6 /* Pods_SwiftReactNativeHybridTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24266F66E8C779087939FEC4 /* Pods_SwiftReactNativeHybridTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		008468547D780C5BC02D6435 /* Pods-SwiftReactNativeHybridUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftReactNativeHybridUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftReactNativeHybridUITests/Pods-SwiftReactNativeHybridUITests.release.xcconfig"; sourceTree = "<group>"; };
+		09C9843A04EBF70C5BA436FD /* Pods-SwiftReactNativeHybrid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftReactNativeHybrid.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftReactNativeHybrid/Pods-SwiftReactNativeHybrid.release.xcconfig"; sourceTree = "<group>"; };
 		0C4968441EF012AB00986618 /* SwiftReactNativeHybrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftReactNativeHybrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4968471EF012AB00986618 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C4968491EF012AB00986618 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +54,13 @@
 		0C4968651EF012AB00986618 /* SwiftReactNativeHybridUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftReactNativeHybridUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4968691EF012AB00986618 /* SwiftReactNativeHybridUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftReactNativeHybridUITests.swift; sourceTree = "<group>"; };
 		0C49686B1EF012AB00986618 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		201C21D4935BD60DCF2CE4C5 /* Pods-SwiftReactNativeHybridTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftReactNativeHybridTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftReactNativeHybridTests/Pods-SwiftReactNativeHybridTests.release.xcconfig"; sourceTree = "<group>"; };
+		24266F66E8C779087939FEC4 /* Pods_SwiftReactNativeHybridTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftReactNativeHybridTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34CF81B8ADA7E1299DF48147 /* Pods-SwiftReactNativeHybridUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftReactNativeHybridUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftReactNativeHybridUITests/Pods-SwiftReactNativeHybridUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		47058CF3544BDD701942E042 /* Pods-SwiftReactNativeHybridTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftReactNativeHybridTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftReactNativeHybridTests/Pods-SwiftReactNativeHybridTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6E3501558751A4EC5F8F8F35 /* Pods_SwiftReactNativeHybridUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftReactNativeHybridUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73DF2F0B90572AFFCAF0D0B2 /* Pods-SwiftReactNativeHybrid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftReactNativeHybrid.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftReactNativeHybrid/Pods-SwiftReactNativeHybrid.debug.xcconfig"; sourceTree = "<group>"; };
+		940C527B1200A8F7B16FDE0A /* Pods_SwiftReactNativeHybrid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftReactNativeHybrid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51245CAAA5D00DF4C3D918EA /* Pods_SwiftReactNativeHybrid.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB789553A1AD7220DAD243D6 /* Pods_SwiftReactNativeHybridTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1937C1C0D1ADE12FA5590552 /* Pods_SwiftReactNativeHybridUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +98,8 @@
 				0C49685D1EF012AB00986618 /* SwiftReactNativeHybridTests */,
 				0C4968681EF012AB00986618 /* SwiftReactNativeHybridUITests */,
 				0C4968451EF012AB00986618 /* Products */,
+				26619B18FFE58C2DF29B52C4 /* Pods */,
+				99E05CC8A3362F67FFD6BD55 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +145,29 @@
 			path = SwiftReactNativeHybridUITests;
 			sourceTree = "<group>";
 		};
+		26619B18FFE58C2DF29B52C4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				73DF2F0B90572AFFCAF0D0B2 /* Pods-SwiftReactNativeHybrid.debug.xcconfig */,
+				09C9843A04EBF70C5BA436FD /* Pods-SwiftReactNativeHybrid.release.xcconfig */,
+				47058CF3544BDD701942E042 /* Pods-SwiftReactNativeHybridTests.debug.xcconfig */,
+				201C21D4935BD60DCF2CE4C5 /* Pods-SwiftReactNativeHybridTests.release.xcconfig */,
+				34CF81B8ADA7E1299DF48147 /* Pods-SwiftReactNativeHybridUITests.debug.xcconfig */,
+				008468547D780C5BC02D6435 /* Pods-SwiftReactNativeHybridUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		99E05CC8A3362F67FFD6BD55 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				940C527B1200A8F7B16FDE0A /* Pods_SwiftReactNativeHybrid.framework */,
+				24266F66E8C779087939FEC4 /* Pods_SwiftReactNativeHybridTests.framework */,
+				6E3501558751A4EC5F8F8F35 /* Pods_SwiftReactNativeHybridUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0C49686E1EF012AB00986618 /* Build configuration list for PBXNativeTarget "SwiftReactNativeHybrid" */;
 			buildPhases = (
+				87EE979CFEFF71399648B3AE /* [CP] Check Pods Manifest.lock */,
 				0C4968401EF012AB00986618 /* Sources */,
 				0C4968411EF012AB00986618 /* Frameworks */,
 				0C4968421EF012AB00986618 /* Resources */,
+				E3E22A4BBFD898068DB02728 /* [CP] Embed Pods Frameworks */,
+				C17D5D304A9C133E001B3188 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0C4968711EF012AB00986618 /* Build configuration list for PBXNativeTarget "SwiftReactNativeHybridTests" */;
 			buildPhases = (
+				DA6498C175B956145791C98F /* [CP] Check Pods Manifest.lock */,
 				0C4968561EF012AB00986618 /* Sources */,
 				0C4968571EF012AB00986618 /* Frameworks */,
 				0C4968581EF012AB00986618 /* Resources */,
+				7B8C6DF812B32D8A97671A6B /* [CP] Embed Pods Frameworks */,
+				4C99F4C2E530BB51F778B05D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +216,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0C4968741EF012AB00986618 /* Build configuration list for PBXNativeTarget "SwiftReactNativeHybridUITests" */;
 			buildPhases = (
+				D356F2A620BD61A63AABB6B0 /* [CP] Check Pods Manifest.lock */,
 				0C4968611EF012AB00986618 /* Sources */,
 				0C4968621EF012AB00986618 /* Frameworks */,
 				0C4968631EF012AB00986618 /* Resources */,
+				AAF71C842896D99C334A29EA /* [CP] Embed Pods Frameworks */,
+				2CB86A4155E14021794658D1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,6 +305,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2CB86A4155E14021794658D1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftReactNativeHybridUITests/Pods-SwiftReactNativeHybridUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4C99F4C2E530BB51F778B05D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftReactNativeHybridTests/Pods-SwiftReactNativeHybridTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B8C6DF812B32D8A97671A6B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftReactNativeHybridTests/Pods-SwiftReactNativeHybridTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87EE979CFEFF71399648B3AE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AAF71C842896D99C334A29EA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftReactNativeHybridUITests/Pods-SwiftReactNativeHybridUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C17D5D304A9C133E001B3188 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftReactNativeHybrid/Pods-SwiftReactNativeHybrid-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D356F2A620BD61A63AABB6B0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DA6498C175B956145791C98F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E3E22A4BBFD898068DB02728 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftReactNativeHybrid/Pods-SwiftReactNativeHybrid-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0C4968401EF012AB00986618 /* Sources */ = {
@@ -414,6 +601,7 @@
 		};
 		0C49686F1EF012AB00986618 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73DF2F0B90572AFFCAF0D0B2 /* Pods-SwiftReactNativeHybrid.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SwiftReactNativeHybrid/Info.plist;
@@ -426,6 +614,7 @@
 		};
 		0C4968701EF012AB00986618 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09C9843A04EBF70C5BA436FD /* Pods-SwiftReactNativeHybrid.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SwiftReactNativeHybrid/Info.plist;
@@ -438,6 +627,7 @@
 		};
 		0C4968721EF012AB00986618 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47058CF3544BDD701942E042 /* Pods-SwiftReactNativeHybridTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -452,6 +642,7 @@
 		};
 		0C4968731EF012AB00986618 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 201C21D4935BD60DCF2CE4C5 /* Pods-SwiftReactNativeHybridTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -466,6 +657,7 @@
 		};
 		0C4968751EF012AB00986618 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34CF81B8ADA7E1299DF48147 /* Pods-SwiftReactNativeHybridUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SwiftReactNativeHybridUITests/Info.plist;
@@ -479,6 +671,7 @@
 		};
 		0C4968761EF012AB00986618 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 008468547D780C5BC02D6435 /* Pods-SwiftReactNativeHybridUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SwiftReactNativeHybridUITests/Info.plist;
