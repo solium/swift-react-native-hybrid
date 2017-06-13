@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		0C4968481EF012AB00986618 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4968471EF012AB00986618 /* AppDelegate.swift */; };
 		0C49684A1EF012AB00986618 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4968491EF012AB00986618 /* FirstViewController.swift */; };
-		0C49684C1EF012AB00986618 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C49684B1EF012AB00986618 /* SecondViewController.swift */; };
-		0C49684F1EF012AB00986618 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C49684D1EF012AB00986618 /* Main.storyboard */; };
+		0C49684F1EF012AB00986618 /* FirstViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C49684D1EF012AB00986618 /* FirstViewController.storyboard */; };
 		0C4968511EF012AB00986618 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C4968501EF012AB00986618 /* Assets.xcassets */; };
 		0C4968541EF012AB00986618 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4968521EF012AB00986618 /* LaunchScreen.storyboard */; };
 		0C49685F1EF012AB00986618 /* SwiftReactNativeHybridTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C49685E1EF012AB00986618 /* SwiftReactNativeHybridTests.swift */; };
 		0C49686A1EF012AB00986618 /* SwiftReactNativeHybridUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4968691EF012AB00986618 /* SwiftReactNativeHybridUITests.swift */; };
 		1937C1C0D1ADE12FA5590552 /* Pods_SwiftReactNativeHybridUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3501558751A4EC5F8F8F35 /* Pods_SwiftReactNativeHybridUITests.framework */; };
 		51245CAAA5D00DF4C3D918EA /* Pods_SwiftReactNativeHybrid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 940C527B1200A8F7B16FDE0A /* Pods_SwiftReactNativeHybrid.framework */; };
+		B9BE0D2B1EF065D50034FF3D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BE0D2A1EF065D50034FF3D /* TabBarController.swift */; };
 		CB789553A1AD7220DAD243D6 /* Pods_SwiftReactNativeHybridTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24266F66E8C779087939FEC4 /* Pods_SwiftReactNativeHybridTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,8 +43,7 @@
 		0C4968441EF012AB00986618 /* SwiftReactNativeHybrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftReactNativeHybrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4968471EF012AB00986618 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C4968491EF012AB00986618 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		0C49684B1EF012AB00986618 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		0C49684E1EF012AB00986618 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0C49684E1EF012AB00986618 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FirstViewController.storyboard; sourceTree = "<group>"; };
 		0C4968501EF012AB00986618 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C4968531EF012AB00986618 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C4968551EF012AB00986618 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +60,7 @@
 		6E3501558751A4EC5F8F8F35 /* Pods_SwiftReactNativeHybridUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftReactNativeHybridUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73DF2F0B90572AFFCAF0D0B2 /* Pods-SwiftReactNativeHybrid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftReactNativeHybrid.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftReactNativeHybrid/Pods-SwiftReactNativeHybrid.debug.xcconfig"; sourceTree = "<group>"; };
 		940C527B1200A8F7B16FDE0A /* Pods_SwiftReactNativeHybrid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftReactNativeHybrid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9BE0D2A1EF065D50034FF3D /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +118,8 @@
 			children = (
 				0C4968471EF012AB00986618 /* AppDelegate.swift */,
 				0C4968491EF012AB00986618 /* FirstViewController.swift */,
-				0C49684B1EF012AB00986618 /* SecondViewController.swift */,
-				0C49684D1EF012AB00986618 /* Main.storyboard */,
+				0C49684D1EF012AB00986618 /* FirstViewController.storyboard */,
+				B9BE0D2A1EF065D50034FF3D /* TabBarController.swift */,
 				0C4968501EF012AB00986618 /* Assets.xcassets */,
 				0C4968521EF012AB00986618 /* LaunchScreen.storyboard */,
 				0C4968551EF012AB00986618 /* Info.plist */,
@@ -288,7 +288,7 @@
 			files = (
 				0C4968541EF012AB00986618 /* LaunchScreen.storyboard in Resources */,
 				0C4968511EF012AB00986618 /* Assets.xcassets in Resources */,
-				0C49684F1EF012AB00986618 /* Main.storyboard in Resources */,
+				0C49684F1EF012AB00986618 /* FirstViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,7 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C49684C1EF012AB00986618 /* SecondViewController.swift in Sources */,
+				B9BE0D2B1EF065D50034FF3D /* TabBarController.swift in Sources */,
 				0C4968481EF012AB00986618 /* AppDelegate.swift in Sources */,
 				0C49684A1EF012AB00986618 /* FirstViewController.swift in Sources */,
 			);
@@ -517,12 +517,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0C49684D1EF012AB00986618 /* Main.storyboard */ = {
+		0C49684D1EF012AB00986618 /* FirstViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				0C49684E1EF012AB00986618 /* Base */,
 			);
-			name = Main.storyboard;
+			name = FirstViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		0C4968521EF012AB00986618 /* LaunchScreen.storyboard */ = {
