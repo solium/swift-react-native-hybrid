@@ -259,7 +259,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
-				ORGANIZATIONNAME = "Solium Inc.";
+				ORGANIZATIONNAME = "Solium Capital Inc.";
 				TargetAttributes = {
 					0C4968431EF012AB00986618 = {
 						CreatedOnToolsVersion = 8.3.3;
