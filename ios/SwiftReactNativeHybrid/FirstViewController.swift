@@ -10,18 +10,23 @@ import UIKit
 
 class FirstViewController: UIViewController {
     
+    var count = 0
+    
     @IBOutlet weak var firstViewLabel: UILabel!
-
+    @IBOutlet weak var counterLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        counterLabel.text = "Counter: \(count)"
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func incrementAndBroadcast(_ sender: Any) {
+        count += 1
+        counterLabel.text = "Counter: \(count)"
+
+        // Broadcast the new count value to React Native
+        NativeModuleBroadcastToJavaScript.broadcastCounterChangedEvent(count: count)
     }
-
-
 }
 

@@ -14,3 +14,6 @@
 RCT_EXTERN_METHOD(helloSwift:(NSString *)greeting)
 
 @end
+
+@interface RCT_EXTERN_MODULE(NativeModuleBroadcastToJavaScript, RCTEventEmitter)
+@end

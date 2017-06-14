@@ -6,6 +6,8 @@ import React, { Component } from 'react';
 import {
   Button,
   NativeModules,
+  NativeEventEmitter,
+  EmitterSubscription,
   StyleSheet,
   Text,
   TextInput,
@@ -13,9 +15,34 @@ import {
 } from 'react-native';
 
 export default class ReactNativeTab extends Component {
-    constructor(props) {
+  constructor(props) {
     super(props);
     this.state = { text: 'Enter text to send to Swift' };
+  }
+
+  counterChangedEventEmitter: NativeEventEmitter = null;
+  counterChangedEventSubscriber: EmitterSubscription = null;
+
+  componentWillMount(): void {
+    this.setupSwiftCounterChangedEventListener();
+  }
+
+  componentWillUnmount(): void {
+    this.counterChangedEventSubscriber.remove();
+  }
+
+  setupSwiftCounterChangedEventListener() {
+    this.counterChangedEventEmitter = new NativeEventEmitter(NativeModules.NativeModuleBroadcastToJavaScript);
+    this.counterChangedEventSubscriber = this.counterChangedEventEmitter.addListener(
+      "SwiftCounterChanged",
+      (countEventInfo) => {
+        this.setState({ text: "Swift Counter is now " + countEventInfo.count });
+      }
+    );
+  }
+
+  callIntoSwift(greeting: string) {
+    NativeModules.NativeModuleCallSwift.helloSwift(greeting);
   }
 
   render() {
@@ -40,16 +67,12 @@ export default class ReactNativeTab extends Component {
           <Button
             onPress={ () => this.callIntoSwift(this.state.text) }
             title="Call Swift with Text"
-            color="#841584"
+            color="#007aff"
           />
         </View>
         <View style={styles.tabContentBottomSpacer}/>
       </View>
     );
-  }
-
-  callIntoSwift(greeting: string) {
-    NativeModules.NativeModuleCallSwift.helloSwift(greeting);
   }
 }
 
