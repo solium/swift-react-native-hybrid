@@ -4,13 +4,20 @@
 
 import React, { Component } from 'react';
 import {
-  AppRegistry,
+  Button,
+  NativeModules,
   StyleSheet,
   Text,
+  TextInput,
   View
 } from 'react-native';
 
 export default class ReactNativeTab extends Component {
+    constructor(props) {
+    super(props);
+    this.state = { text: 'Enter text to send to Swift' };
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -25,10 +32,24 @@ export default class ReactNativeTab extends Component {
             Press Cmd+R to reload,{'\n'}
             Cmd+D or shake for dev menu
           </Text>
+          <TextInput
+            style={{height: 44, borderColor: 'gray', borderWidth: 1}}
+            onChangeText={(text) => this.setState({text})}
+            value={this.state.text}
+          />
+          <Button
+            onPress={ () => this.callIntoSwift(this.state.text) }
+            title="Call Swift with Text"
+            color="#841584"
+          />
         </View>
         <View style={styles.tabContentBottomSpacer}/>
       </View>
     );
+  }
+
+  callIntoSwift(greeting: string) {
+    NativeModules.NativeModuleCallSwift.helloSwift(greeting);
   }
 }
 

@@ -9,6 +9,8 @@
 import UIKit
 
 class FirstViewController: UIViewController {
+    
+    @IBOutlet weak var firstViewLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
