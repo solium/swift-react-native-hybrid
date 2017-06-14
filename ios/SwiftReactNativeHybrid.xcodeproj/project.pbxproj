@@ -161,8 +161,8 @@
 				0C4968B41EF0DEE200986618 /* BridgingHeader.h */,
 				0C4968B51EF0DFAF00986618 /* SwiftReactNativeBridge.m */,
 				0C4968B71EF0E05100986618 /* NativeModuleCallSwift.swift */,
-				0C4968BD1EF0E8E400986618 /* NativeModuleBroadcastToJavaScript.swift */,
 				0C4968BF1EF0F08700986618 /* NativeModuleJavaScriptCallback.swift */,
+				0C4968BD1EF0E8E400986618 /* NativeModuleBroadcastToJavaScript.swift */,
 			);
 			path = NativeModules;
 			sourceTree = "<group>";

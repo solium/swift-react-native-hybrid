@@ -17,7 +17,11 @@ import {
 export default class ReactNativeTab extends Component {
   constructor(props) {
     super(props);
-    this.state = { text: 'Enter text to send to Swift' };
+    this.state = {
+      textField: 'Enter text to send to Swift',
+      swiftCounterValue: 0,
+      swiftButtonCurrentlyEnabled: true,
+     };
   }
 
   counterChangedEventEmitter: NativeEventEmitter = null;
@@ -31,27 +35,31 @@ export default class ReactNativeTab extends Component {
     this.counterChangedEventSubscriber.remove();
   }
 
+  // Type 1: Calling a Swift function from JavaScript
+  callIntoSwift(greeting: string) {
+    NativeModules.NativeModuleCallSwift.helloSwift(greeting);
+  }
+
+  // Type 2: Calling a Swift function with a callback
+  toggleSwiftButtonEnabledState() {
+    NativeModules.NativeModuleJavaScriptCallback.toggleSwiftButtonEnabled(
+        (newStateDict) => {
+          this.setState({ swiftButtonCurrentlyEnabled: newStateDict.swiftButtonEnabled });
+        }
+      );
+  }
+
+  // Type 3: Broadcasting data from Swift and listening in JavaScript
   setupSwiftCounterChangedEventListener() {
     this.counterChangedEventEmitter = new NativeEventEmitter(NativeModules.NativeModuleBroadcastToJavaScript);
     this.counterChangedEventSubscriber = this.counterChangedEventEmitter.addListener(
       "SwiftCounterChanged",
       (countEventInfo) => {
-        this.setState({ text: "Swift Counter is now " + countEventInfo.count });
+        this.setState({ swiftCounterValue: countEventInfo.count });
       }
     );
   }
 
-  callIntoSwift(greeting: string) {
-    NativeModules.NativeModuleCallSwift.helloSwift(greeting);
-  }
-
-  toggleSwiftButtonEnabledState() {
-    NativeModules.NativeModuleJavaScriptCallback.toggleSwiftButtonEnabled(
-        (newStateDict) => {
-          this.setState({ text: "Swift Button is enabled: " + newStateDict.swiftButtonEnabled });
-        }
-      );
-  }
 
   render() {
     return (
@@ -69,19 +77,25 @@ export default class ReactNativeTab extends Component {
           </Text>
           <TextInput
             style={{height: 44, borderColor: 'gray', borderWidth: 1}}
-            onChangeText={(text) => this.setState({text})}
-            value={this.state.text}
+            onChangeText={(textField) => this.setState({textField})}
+            value={this.state.textField}
           />
           <Button
-            onPress={ () => this.callIntoSwift(this.state.text) }
-            title="Call Swift with Text"
+            onPress={ () => this.callIntoSwift(this.state.textField) }
+            title="1. Call Swift with Text"
             color="#007aff"
           />
+          <Text style={{textAlign: 'center', marginTop: 30}}>
+            Swift button currently enabled: {this.state.swiftButtonCurrentlyEnabled.toString()}
+          </Text>
           <Button
             onPress={ () => this.toggleSwiftButtonEnabledState() }
-            title="Toggle Swift Increment Button Enabled"
+            title="2. Toggle Swift Increment Button Enabled"
             color="#007aff"
           />
+          <Text style={{textAlign: 'center', marginTop: 30}}>
+            3. Swift counter value: {this.state.swiftCounterValue.toString()}
+          </Text>
         </View>
         <View style={styles.tabContentBottomSpacer}/>
       </View>
@@ -110,6 +124,6 @@ const styles = StyleSheet.create({
   instructions: {
     textAlign: 'center',
     color: '#333333',
-    marginBottom: 5,
+    marginBottom: 30,
   },
 });
