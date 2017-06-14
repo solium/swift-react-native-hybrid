@@ -12,7 +12,9 @@ import React
 @objc(NativeModuleBroadcastToJavaScript)
 class NativeModuleBroadcastToJavaScript: RCTEventEmitter {
     
+    // These strings must match the value used in JavaScript
     static let counterChangedEvent = "SwiftCounterChanged"
+    static let counterKey = "count"
     
     // MARK: RCTEventEmitter
     override func supportedEvents() -> [String]! {
@@ -26,7 +28,7 @@ class NativeModuleBroadcastToJavaScript: RCTEventEmitter {
                 return
         }
         
-        let counterEventInfo: [String: Any] = ["count": count]
+        let counterEventInfo: [String: Any] = [counterKey: count]
         rnEventEmitter.sendEvent(withName: counterChangedEvent, body: counterEventInfo)
     }
 }

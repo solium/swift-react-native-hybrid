@@ -17,6 +17,7 @@
 		0C4968B61EF0DFAF00986618 /* SwiftReactNativeBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4968B51EF0DFAF00986618 /* SwiftReactNativeBridge.m */; };
 		0C4968B81EF0E05100986618 /* NativeModuleCallSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4968B71EF0E05100986618 /* NativeModuleCallSwift.swift */; };
 		0C4968BE1EF0E8E400986618 /* NativeModuleBroadcastToJavaScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4968BD1EF0E8E400986618 /* NativeModuleBroadcastToJavaScript.swift */; };
+		0C4968C01EF0F08700986618 /* NativeModuleJavaScriptCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4968BF1EF0F08700986618 /* NativeModuleJavaScriptCallback.swift */; };
 		1937C1C0D1ADE12FA5590552 /* Pods_SwiftReactNativeHybridUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3501558751A4EC5F8F8F35 /* Pods_SwiftReactNativeHybridUITests.framework */; };
 		51245CAAA5D00DF4C3D918EA /* Pods_SwiftReactNativeHybrid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 940C527B1200A8F7B16FDE0A /* Pods_SwiftReactNativeHybrid.framework */; };
 		B9BE0D2B1EF065D50034FF3D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BE0D2A1EF065D50034FF3D /* TabBarController.swift */; };
@@ -60,6 +61,7 @@
 		0C4968B51EF0DFAF00986618 /* SwiftReactNativeBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftReactNativeBridge.m; sourceTree = "<group>"; };
 		0C4968B71EF0E05100986618 /* NativeModuleCallSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeModuleCallSwift.swift; sourceTree = "<group>"; };
 		0C4968BD1EF0E8E400986618 /* NativeModuleBroadcastToJavaScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeModuleBroadcastToJavaScript.swift; sourceTree = "<group>"; };
+		0C4968BF1EF0F08700986618 /* NativeModuleJavaScriptCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeModuleJavaScriptCallback.swift; sourceTree = "<group>"; };
 		201C21D4935BD60DCF2CE4C5 /* Pods-SwiftReactNativeHybridTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftReactNativeHybridTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftReactNativeHybridTests/Pods-SwiftReactNativeHybridTests.release.xcconfig"; sourceTree = "<group>"; };
 		24266F66E8C779087939FEC4 /* Pods_SwiftReactNativeHybridTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftReactNativeHybridTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34CF81B8ADA7E1299DF48147 /* Pods-SwiftReactNativeHybridUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftReactNativeHybridUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftReactNativeHybridUITests/Pods-SwiftReactNativeHybridUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				0C4968B51EF0DFAF00986618 /* SwiftReactNativeBridge.m */,
 				0C4968B71EF0E05100986618 /* NativeModuleCallSwift.swift */,
 				0C4968BD1EF0E8E400986618 /* NativeModuleBroadcastToJavaScript.swift */,
+				0C4968BF1EF0F08700986618 /* NativeModuleJavaScriptCallback.swift */,
 			);
 			path = NativeModules;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				0C4968BE1EF0E8E400986618 /* NativeModuleBroadcastToJavaScript.swift in Sources */,
 				0C4968B81EF0E05100986618 /* NativeModuleCallSwift.swift in Sources */,
 				B9BE0D2B1EF065D50034FF3D /* TabBarController.swift in Sources */,
+				0C4968C01EF0F08700986618 /* NativeModuleJavaScriptCallback.swift in Sources */,
 				0C4968481EF012AB00986618 /* AppDelegate.swift in Sources */,
 				0C49684A1EF012AB00986618 /* FirstViewController.swift in Sources */,
 				0C4968B61EF0DFAF00986618 /* SwiftReactNativeBridge.m in Sources */,

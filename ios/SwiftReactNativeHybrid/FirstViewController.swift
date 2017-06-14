@@ -14,6 +14,7 @@ class FirstViewController: UIViewController {
     
     @IBOutlet weak var firstViewLabel: UILabel!
     @IBOutlet weak var counterLabel: UILabel!
+    @IBOutlet weak var incrementButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

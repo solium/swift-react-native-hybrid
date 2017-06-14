@@ -69,6 +69,7 @@
                     <connections>
                         <outlet property="counterLabel" destination="KeA-vk-sCJ" id="jfd-FF-8hT"/>
                         <outlet property="firstViewLabel" destination="3uz-o7-kEA" id="jat-4G-qfF"/>
+                        <outlet property="incrementButton" destination="FKX-K9-z15" id="Ga1-q8-DGX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>

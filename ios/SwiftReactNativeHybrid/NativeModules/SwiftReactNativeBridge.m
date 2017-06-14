@@ -15,5 +15,13 @@ RCT_EXTERN_METHOD(helloSwift:(NSString *)greeting)
 
 @end
 
+
 @interface RCT_EXTERN_MODULE(NativeModuleBroadcastToJavaScript, RCTEventEmitter)
+@end
+
+
+@interface RCT_EXTERN_MODULE(NativeModuleJavaScriptCallback, NSObject)
+
+RCT_EXTERN_METHOD(toggleSwiftButtonEnabled:(RCTResponseSenderBlock *)callback)
+
 @end

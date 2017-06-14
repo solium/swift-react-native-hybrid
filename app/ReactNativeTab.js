@@ -45,6 +45,14 @@ export default class ReactNativeTab extends Component {
     NativeModules.NativeModuleCallSwift.helloSwift(greeting);
   }
 
+  toggleSwiftButtonEnabledState() {
+    NativeModules.NativeModuleJavaScriptCallback.toggleSwiftButtonEnabled(
+        (newStateDict) => {
+          this.setState({ text: "Swift Button is enabled: " + newStateDict.swiftButtonEnabled });
+        }
+      );
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -67,6 +75,11 @@ export default class ReactNativeTab extends Component {
           <Button
             onPress={ () => this.callIntoSwift(this.state.text) }
             title="Call Swift with Text"
+            color="#007aff"
+          />
+          <Button
+            onPress={ () => this.toggleSwiftButtonEnabledState() }
+            title="Toggle Swift Increment Button Enabled"
             color="#007aff"
           />
         </View>
