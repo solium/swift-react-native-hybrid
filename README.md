@@ -133,3 +133,6 @@ _Note:_ I'll do my best to keep this up to date with new RN release.
 - Document the Xcode build scripts
 - Document Cocoapods and hacks needed for React
 
+## License
+
+This sample app is licensed under the [MIT License](LICENSE).
