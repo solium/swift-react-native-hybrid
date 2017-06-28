@@ -7,15 +7,24 @@ import {
   Button,
   NativeModules,
   NativeEventEmitter,
-  EmitterSubscription,
   StyleSheet,
   Text,
   TextInput,
   View
 } from 'react-native';
 
+import type EmitterSubscription from 'EmitterSubscription';
+
+type StateType = {
+  textField: string;
+  swiftCounterValue: number;
+  swiftButtonCurrentlyEnabled: boolean;
+};
+
 export default class ReactNativeTab extends Component {
-  constructor(props) {
+  state: StateType;
+
+  constructor(props: Object) {
     super(props);
     this.state = {
       textField: 'Enter text to send to Swift',
@@ -24,7 +33,7 @@ export default class ReactNativeTab extends Component {
      };
   }
 
-  counterChangedEventEmitter: NativeEventEmitter = null;
+  counterChangedEventEmitter: ?NativeEventEmitter = null;
   counterChangedEventSubscriber: EmitterSubscription = null;
 
   componentWillMount(): void {

@@ -260,10 +260,6 @@ A. The main reason is that the React Native community movies so fast that within
 _Note:_ I'll do my best to keep this up to date with new RN release.
 
 
-## TODO
-
-- Fix flow errors in ReactNativeTab.js
-
 ## License
 
 This sample app is licensed under the [MIT License](LICENSE).
