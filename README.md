@@ -78,6 +78,51 @@ These two tabs can optionally talk to each other via different means specified b
  which registers a new top-level module which is used when the `Second` tab is created in `TabBarController.swift`
 * `ReactNativeTab.js` contains all of the JS code for the 2nd tab. Note this is a full screen view, including content that will be hidden behind the native Swift tab bar. For this reason, it uses a `StyleSheet` where the bottom 49 pixels of the tab bar are covered up by a `tabContentBottomSpacer`.
 
+### Cocoapods
+
+This app also demonstrates using Cocoapods, as is the norm for most iOS Swift projects. React Native is installed via Cocoapods, which is probably safe to say is not The Happy Path(™), especially with the use of `use_frameworks!` directive. React Native has some docs on this: [Integrating with Existing Apps](https://facebook.github.io/react-native/docs/integration-with-existing-apps.html) (be sure to click on Swift).
+
+See [ios/Podfile](ios/Podfile) for the sample setup. Things to note:
+
+* React Native itself is installed in `node_modules` and the Podspec for RN takes it from node_modules, not from the standard Cocoapods repo
+* You need certain subspecs that you may not expect. This list frequently changes with new RN releases. For instance, RN 0.45 required the addition of the `DevSupport` podspec to get the RN Debug menu working in the Simulator. Keep an eye on those RN Release Notes!
+* As the RN docs mention, you need to explicity include `Yoga` as it's own Pod.
+
+
+#### Cocoapods Breakages
+
+Fairly often when upgrading to a new version of React Native, some header will fail to compile, likely due to working differently with Cocoapods / `use_frameworks!` than including React Native directly as a sub-project.
+
+As an instructive example, I'll walk you through the most recent one I found with this sample project and React Native 0.45. We were seeing compilation errors like:
+
+```
+'RCTAnimation/RCTValueAnimatedNode.h' file not found
+```
+
+Here is the React Native GitHub issue: [React Native Issue #13198](https://github.com/facebook/react-native/issues/13198)
+
+Perusing the bug, you'll see people reporting that if you change the header imports to use quotes instead of angle brackets, it works. You'll also see reports of a fix, which didn't actually fix it. This is a trying, semi-frequent occurence when using React Native via Cocoapods.
+
+Typically, I google these errors as much as possible and hope to find an RN issue with a workaround. Here is the one that is currently included in this sample project. There is a hack to add a postinstall script to package.json:
+
+```
+$ git diff 63402214a8e2f5bcc39ac74edbff62fdca00c099..327ee8d75b0d864e409cfda10bd0d40648fd8b41 package.json
+index 148c3e1e..24aad398 100644
+--- a/package.json
++++ b/package.json
+@@ -3,6 +3,7 @@
+        "version": "0.0.1",
+        "private": true,
+        "scripts": {
++                "postinstall": "sed -i '' 's\/#import <RCTAnimation\\/RCTValueAnimatedNode.h>\/#import \"RCTValueAnimatedNode.h\"\/' ./node_modules/react-native/Libraries/NativeAnimation/RCTNativeAnimatedNodesManager.h",
+                "start": "node node_modules/react-native/local-cli/cli.js start",
+                "test": "jest"
+        },
+```
+
+This will manually change the imports after installing React Native via `yarn` or `npm`.
+
+Hopefully this be removed in a future React Native release.
 
 ## Communication Between Swift and React Native
 
