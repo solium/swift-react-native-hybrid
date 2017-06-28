@@ -13,7 +13,7 @@ import {
   View
 } from 'react-native';
 
-import type EmitterSubscription from 'EmitterSubscription';
+import EmitterSubscription from 'EmitterSubscription';
 
 type StateType = {
   textField: string;
