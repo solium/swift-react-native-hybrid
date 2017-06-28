@@ -202,7 +202,6 @@
 				0C4968411EF012AB00986618 /* Frameworks */,
 				0C4968421EF012AB00986618 /* Resources */,
 				B9362D801EF037F200FF5601 /* Bundle React Native code and images */,
-				B9BE0D291EF03A4F0034FF3D /* Allow Localhost for App Transport Security */,
 				E3E22A4BBFD898068DB02728 /* [CP] Embed Pods Frameworks */,
 				C17D5D304A9C133E001B3188 /* [CP] Copy Pods Resources */,
 			);
@@ -419,20 +418,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/packager/react-native-xcode.sh";
-		};
-		B9BE0D291EF03A4F0034FF3D /* Allow Localhost for App Transport Security */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Allow Localhost for App Transport Security";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "set -x\n\n# Create a compile-time App Transport Security override to allow us to talk to localhost without HTTPS\nif [[ \"$PLATFORM_NAME\" == \"iphonesimulator\" || \"$CONFIGURATION\" == \"Debug\" ]]; then\n    PLISTBUDDY='/usr/libexec/PlistBuddy'\n    PLIST=$TARGET_BUILD_DIR/$INFOPLIST_PATH\n    # If it already exists, this is going to give a non-zero exit code, so we will just return true\n    $PLISTBUDDY -c \"Add NSAppTransportSecurity:NSExceptionDomains:localhost:NSTemporaryExceptionAllowsInsecureHTTPLoads bool true\" \"$PLIST\" || true\n    $PLISTBUDDY -c \"Add NSAppTransportSecurity:NSAllowsLocalNetworking bool true\" \"$PLIST\" || true\nfi";
 		};
 		C17D5D304A9C133E001B3188 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

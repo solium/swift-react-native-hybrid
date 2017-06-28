@@ -78,6 +78,24 @@ These two tabs can optionally talk to each other via different means specified b
  which registers a new top-level module which is used when the `Second` tab is created in `TabBarController.swift`
 * `ReactNativeTab.js` contains all of the JS code for the 2nd tab. Note this is a full screen view, including content that will be hidden behind the native Swift tab bar. For this reason, it uses a `StyleSheet` where the bottom 49 pixels of the tab bar are covered up by a `tabContentBottomSpacer`.
 
+### Xcode Build Phase
+
+If you are adding React Native to an existing iOS project, there are is an Xcode build phase you need.
+
+1. There is a RN  standard phase to package all the JavaScripts assets into a single file. This script was copied directly from the standard, `react-native init HelloWorld` project.
+
+ * Xcode > Click Project > Click Build Phases
+ * New Run Script Phase
+ * Name: "Bundle React Native code and images"
+ * Script:
+   
+   ```
+   export NODE_BINARY=node
+   ../node_modules/react-native/packager/react-native-xcode.sh
+   ```
+
+ This will ensure all the JS and images assets are bundled when building for release. It also provides an App Transport Security override (during Debug only) so that you can talk to your JavaScript packager running on your computer.
+
 ### Cocoapods
 
 This app also demonstrates using Cocoapods, as is the norm for most iOS Swift projects. React Native is installed via Cocoapods, which is probably safe to say is not The Happy Path(™), especially with the use of `use_frameworks!` directive. React Native has some docs on this: [Integrating with Existing Apps](https://facebook.github.io/react-native/docs/integration-with-existing-apps.html) (be sure to click on Swift).
@@ -175,8 +193,6 @@ _Note:_ I'll do my best to keep this up to date with new RN release.
 
 - Document the communication mechanisms
 - Fix flow errors in ReactNativeTab.js
-- Document the Xcode build scripts
-- Document Cocoapods and hacks needed for React
 
 ## License
 
