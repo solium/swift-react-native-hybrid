@@ -155,29 +155,100 @@ See the React Native [Native Modules](http://facebook.github.io/react-native/rel
  * You must used the `RCT_EXTERN_MODULE` macro for any Swift classes that will be called from JavaScript.
  * You must used the `RCT_EXTERN_METHOD` macro for any Swift methods that will be called from JavaScript. These must be in Objective-C format. 
 * `NativeModule*.swift` - Example communication methods. A couple of notes:
- * You need a `@objc(MyClassNameHere)` annotatino for the Swift class. Contrary to the React Native docs, you don't need the `objc(addEvent:location:date:)` around each Swift method you want to call. Doing it once for the class is sufficient.
+ * You need a `@objc(MyClassNameHere)` annotation for the Swift class. Contrary to the React Native docs, you don't need the `objc(addEvent:location:date:)` around each Swift method you want to call. Doing it once for the class is sufficient.
  * You cannot have standard Swift style method signatures like `func helloSwift(greeting: String)`. Objective-C can have unnamed first arguments but Swift can't. So use an underscore for the name of the first parameters, e.g. `func helloSwift(_ greeting: String)`. Thanks to [Stack Overflow](https://stackoverflow.com/questions/39692230/got-is-not-a-recognized-objective-c-method-when-bridging-swift-to-react-native/39840952#39840952) for that one.
  * Note that these classes and methods are basically instantiated statically. They probably shouldn't have any state within them.
+ *  Note that you will not be on the main thread when the Swift methods are called, so if updating the UI, you must dispatch onto the main thread using `DispatchQueue.main.async`.
 
 
 ### Method 1. Calling Swift from JavaScript
 
-TODO: Document
+This approach documents how you can call a Swift function from JavaScript.
+
+__How to See it in Action__
+
+1. On the Second tab, enter some text in the text entry where it says "Enter text to send to Swift".
+2. Press the Call Swift with Text button
+3. Switch to the native First tab and see that the string passed from JavaScript has been displayed on the UILabel
+
+__NativeModuleCallSwift.swift:__
+
+ * This has a single Swift function that will get called statically, `helloSwift`.
+ * The string will be passsed in as a parameter.
+ * This updates the UILabel created in the Storyboard on the First tab, while ensuring it's on the main thread.
+
+__ReactNativeTab.js:__
+
+* `Button` has an `onPress` handler which calls `this.callIntoSwift()`. 
+* `callIntoSwift` uses the RN NativeModule, then the NativeModuleCallSwift class we externed, then the method we externed.
+* Easy!
 
 ### Method 2. Calling Swift from JavaScript, with a Callback
 
-TODO: Document
+This approach documents how you can call a Swift function from JavaScript, and receive a callback once the native code has completed something.
+
+__How to See it in Action__
+
+1. On the Second tab, press the Toggle Swift Increment Button Enabled
+2. Switch to the First tab and check the enabled state of the "Increment and Broadcast" button, i.e. is it greyed out or not?
+3. Switch back to the Second tab and view the "Swift button currently enabled: false" Text, which has the result of the callback.
+
+__NativeModuleJavaScriptCallback.swift:__
+
+ * This has a single Swift function that will get called statically, `toggleSwiftButtonEnabled`
+ * The only parameter is a callback function to JavaScript. Note: It's perfectly acceptable to have other parameters as well if the JS wants to pass them to Swift, like in Method 1.
+ * This updates the `isEnabled` state of the button defined in the Storyboard.
+ * It then calls back to JavaScript, with a dictionary with a predefined key name "swiftButtonEnabled" and the true/false boolean value.
+
+
+__ReactNativeTab.js:__
+
+* `Button` has an `onPress` handler which calls `toggleSwiftButtonEnabledState()`. 
+* `toggleSwiftButtonEnabledState()` uses the RN NativeModule, then the NativeModuleJavaScriptCallback.swift class we externed, then the method we externed.
+* For the callback, it takes in a `newStateDict` parameter of a dictionary. It then calls a the [RN setState method](https://facebook.github.io/react-native/docs/state.html) to update this Component's state property with the current button enabled state by accessing `newStateDict.swiftButtonEnabled`.
+* A `Text` component in the `render()` function displays the current state of the Component that was updated by the callback.
+
+          <Text style={{textAlign: 'center', marginTop: 30}}>
+            Swift button currently enabled: {this.state.swiftButtonCurrentlyEnabled.toString()}
+          </Text>
+          
 
 ### Method 3. Broadcasting to JavaScript from Swift
 
-TODO: Document
+This approach documents how you can broadcast data from Swift to JavaScript.
+
+__How to See it in Action__
+
+1. On the Second tab, make sure the Swift button is currently enabled.
+2. On the First tab, press the "Increment and Broadcast" button.
+3. Switch back to Second tab and see the how the current Swift counter value is displayed 
+
+__NativeModuleBroadcastToJavaScript.swift:__
+
+ * This class derives from `RCTEventEmitter` which is needed to broadcast to JavaScript.
+ * `supportedEvents()` method is overridden to document when events can be broadcast to JS
+ * `broadcastCounterChanged` is a static method that first gets the `RCTBridge` from the `AppDelegate` and then asks for the `NativeModuleBroadcastToJavaScript` module.
+ * It uses that module and calls the `sendEvent` method to emit an event.
+ * It passes in the predefined event name "SwiftCounterChanged" (which must be shared with the JavaScript) and a basic `[String: Any]` dictionary which contains the key ("count") and the count value passed into this method.
+ 
+__ReactNativeTab.js:__
+
+* The Component defines a `counterChangedEventEmitter` and `counterChangedEventSubscriber`. 
+* `componentWillMount` calls `setupSwiftCounterChangedEventListener()` which initializes that emitter and subscriber. 
+* It calls `addListener` for a callback that runs when Swift calls `sendEvent` with the "SwiftCounterChanged" event. This listener simply uses the React Native [RN setState method](https://facebook.github.io/react-native/docs/state.html) to update the Component's state with the current count that was broadcast from Swift.
+* A `Text` component in the `render()` function displays the current state of the Component that was updated by the callback.
+
+          <Text style={{textAlign: 'center', marginTop: 30}}>
+            3. Swift counter value: {this.state.swiftCounterValue.toString()}
+          </Text>
+* `componentWillUnmount` removes the subscriber when this component is unloaded.
 
 ## Limitations
 
 * I don't actually know if there is anything technically risky about this approach. Our team at Solium has been using it for quite a while, with a shipping iOS app, and have not discovered any show stoppers yet. Any feedback on limitations would be welcome, please reach out.
 * There hasn't been any effort to keep the Android side of the app working, though the same techniques can definitely be applied.
 * This approach doesn't demonstrate React Native views place as children of a native view that takes up only part of a screen. It should be doable, but it hasn't been explored.
-* I'm not an expert JavaScript programmer, please excuse any sloppliness.
+* I'm not an expert JavaScript programmer, please excuse any sloppiness.
 
  
 ## FAQ
@@ -191,7 +262,6 @@ _Note:_ I'll do my best to keep this up to date with new RN release.
 
 ## TODO
 
-- Document the communication mechanisms
 - Fix flow errors in ReactNativeTab.js
 
 ## License
